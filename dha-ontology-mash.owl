@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://digital-humanities.at/schema"
+     xml:base="https://digital-humanities.at/schema"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:acdh="https://vocabs.acdh.oeaw.ac.at/schema#"
+     xmlns:foaf="http://xmlns.com/foaf/spec/#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="https://digital-humanities.at/schema">
+	<rdfs:label>DHA Ontology - mash</rdfs:label>
+        <rdfs:comment xml:lang="en">Dies ist die gemeinsame Ontologie für Digital Humanities Austria. Sie dient der Beschreibung von digitalen Objekten im Kontext der DH-Forschung.</rdfs:comment>
+<rdfs:comment>In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das Subject und &quot;Ressource B&quot; das Objekt.
+When Definitionen aus anderen Schemata (z. B. DataCite) wiederverwendet werden, wird die Referenz in Klammern angegeben: (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist die Referenz mit &quot;cf.&quot; markiert.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is the ontology for Digital Humanities Austria. It serves the description of digital objects in the context of DH-research.</rdfs:comment>
+<rdfs:comment>In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
+When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>        
+        <owl:versionInfo xml:lang="de">2019-04-05 Erste Fassung *mash*-Ansatz (importieren von existierenden Ontologien) basierend auf dem KONDE Workshop, Wien 2019-03-12/13; ausgehend von dem acdh-schema.owl [https://vocabs.acdh.oeaw.ac.at/schema]</owl:versionInfo>
+
+        <owl:imports rdf:resource="https://vocabs.acdh.oeaw.ac.at/schema"/>
+        <owl:imports rdf:resource="http://fedora.info/definitions/v4/repository#"  />       
+    </owl:Ontology>
+
+</rdf:RDF>
+

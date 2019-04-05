@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://digital-humanities.at/schema"
+     xml:base="https://digital-humanities.at/schema"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:acdh="https://vocabs.acdh.oeaw.ac.at/schema#"
+     xmlns:foaf="http://xmlns.com/foaf/spec/#"
+ 
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="https://digital-humanities.at/schema">
+<rdfs:label>DHA Ontology</rdfs:label>
+    
+        <rdfs:comment xml:lang="en">Dies ist die gemeinsame Ontologie für Digital Humanities Austria. Sie dient der Beschreibung von digitalen Objekten im Kontext der DH-Forschung.</rdfs:comment>
+<rdfs:comment>In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das Subject und &quot;Ressource B&quot; das Objekt.
+When Definitionen aus anderen Schemata (z. B. DataCite) wiederverwendet werden, wird die Referenz in Klammern angegeben: (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist die Referenz mit &quot;cf.&quot; markiert.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is the ontology for Digital Humanities Austria. It serves the description of digital objects in the context of DH-research.</rdfs:comment>
+<rdfs:comment>In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource.
+When reusing definitions from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with &quot;cf.&quot;</rdfs:comment>        
+        <owl:versionInfo xml:lang="de">2019-04-05 - Erste Fassung *native"-Ansatz (Klassen und properties im eigenen Namespace) - basierend auf dem KONDE Workshop, Wien 2019-03-12/13; ausgehend von dem acdh-schema.owl [https://digital-humanities.at/schema]</owl:versionInfo>
+        
+    </owl:Ontology>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/contributor">
+        <owl:equivalentProperty rdf:resource="https://digital-humanities.at/schema#hasContributor"/>
+    </owl:ObjectProperty>
+    
+
+    <!-- https://digital-humanities.at/schema#hasContributor -->
+
+    <owl:ObjectProperty rdf:about="https://digital-humanities.at/schema#hasContributor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://digital-humanities.at/schema#isContributorOf"/>
+        <rdfs:domain rdf:resource="https://digital-humanities.at/schema#Main"/>
+        <rdfs:range rdf:resource="https://digital-humanities.at/schema#Agent"/>
+        <rdfs:comment xml:lang="en">Agent (person, group, organisation) (B) who was actively involved in creating/curating/editing a Resource, a Collection or in a Project (A). Any person or institution making a significant contribution to the development and/or maintenance of the resource, but whose contribution does not “fit” to another already defined role. (cf. DataCite: Other)
+This is a generic property. Use one of the more specific sub-properties where possible.</rdfs:comment>
+        <rdfs:label xml:lang="en">has contributor</rdfs:label>
+        <skos:altLabel xml:lang="en">Contributor(s)</skos:altLabel>
+        <skos:altLabel xml:lang="de">Mitarbeiter oder Beitragende(r)</skos:altLabel>
+        <acdh:ordering rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</acdh:ordering>
+    </owl:ObjectProperty>
+   
+   
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatype Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <owl:DatatypeProperty rdf:about="https://digital-humanities.at/schema#hasIdentifier">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://digital-humanities.at/schema#Main"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="en">Unique identifier given by ACDH and used in ACDH systems, as well as identifiers with a stable URL or URI assigned by other parties, e. g. a DOI, a geonames ID or an URN.
+Input as URI.
+Handles belong into acdh:hasPID and all other identifiers without URL or URI, like local assigned ones, project numbers or inventory numbers into acdh:hasNonLinkedIdentifier.</rdfs:comment>
+        <rdfs:label xml:lang="en">has identifier</rdfs:label>
+        <skos:altLabel xml:lang="en">Identifier(s)</skos:altLabel>
+        <skos:altLabel xml:lang="de">Identifikator(en)</skos:altLabel>        
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    
+	
+    <!-- https://vocabs.acdh.oeaw.ac.at/schema#Main -->
+
+    <owl:Class rdf:about="https://vocabs.acdh.oeaw.ac.at/schema#Main"/>
+    
+
+
+
+    <!-- https://digital-humanities.at/schema#RepoObject -->
+
+    <owl:Class rdf:about="https://digital-humanities.at/schema#RepoObject">
+        <rdfs:comment xml:lang="en">Generic entity representing the items in the repository - Collections and Resources, which are modelled as subclasses of Repo Object.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Note that other classes, especially Project, are not considered subclasses of Repo Object.</rdfs:comment>
+        <rdfs:label>Repo Object</rdfs:label>
+    </owl:Class>
+   
+
+
+    <!-- https://digital-humanities.at/schema#Resource -->
+
+    <owl:Class rdf:about="https://digital-humanities.at/schema#Resource">
+        
+        <rdfs:comment xml:lang="en">Basic entity in the schema containing actual data / content payload; comparable (and mostly equivalent) to files in a file system.</rdfs:comment>
+        <rdfs:label xml:lang="en">Resource</rdfs:label>
+        <skos:altLabel xml:lang="en">Resource</skos:altLabel>
+        <skos:altLabel xml:lang="de">Ressource</skos:altLabel>
+    </owl:Class>
+
+
+    <!-- https://digital-humanities.at/schema#Agent -->
+
+    <owl:Class rdf:about="https://digital-humanities.at/schema#Agent">
+        <rdfs:comment xml:lang="en">Entity able to act, in the context of this schema especially be involved in the making, processing, distributing, publishing etc. of a Resource, Collection, Concept or Project.
+Note that in contrast to foaf:Agent acdh:Agent can only be a Person or an Organisation (not a software or physical artifact).
+The different roles an Agent can assume with respect to a Project, Collection, Resource or Concept are modeled as separate object properties (sub-properties of acdh:contributedTo).</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+        <skos:altLabel xml:lang="en">Agent</skos:altLabel>
+        <skos:altLabel xml:lang="de">Akteur</skos:altLabel>
+		<owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:Class>
+    
+    
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

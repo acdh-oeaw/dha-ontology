@@ -1,0 +1,24 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix dc: <http://purl.org/dc/elements/1.1/>
+prefix dct: <http://purl.org/dc/terms/>
+prefix dha: <https://digital-humanities.at/schema#> 
+prefix gams: <https://gams.uni-graz.at/> 
+
+select * where { ?pid rdf:type dha:RepoObject.
+                 ?pid dha:hasMetadataDescription ?metaref.
+                 ?metaref ?pre ?obj.
+               }
+
+select * where { ?pid rdf:type dha:RepoObject.
+                 ?pid dha:hasAnnotationDescription ?entityref.
+                 ?entityref dha:hasNamedEntity ?entity.
+                 ?entity dha:hasCatchPhrase ?label; rdf:type ?entitytype.
+               }
+
+
+select * where { ?pid rdf:type dha:RepoObject.
+                 ?pid dha:hasDisseminationDescription ?dissref.
+                 ?dissref dha:hasDisseminationService ?servref.
+                 ?servref dha:conformsTo ?conformsTo.
+                 optional { ?servref dha:hasMimeType ?mimetype }
+               }

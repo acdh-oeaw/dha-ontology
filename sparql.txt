@@ -4,21 +4,19 @@ prefix dct: <http://purl.org/dc/terms/>
 prefix dha: <https://digital-humanities.at/schema#> 
 prefix gams: <https://gams.uni-graz.at/> 
 
-select * where { ?pid rdf:type dha:RepoObject.
-                 ?pid dha:hasMetadataDescription ?metaref.
+select * where { ?pid a dha:RepoObject; dha:hasMetadataDescription ?metaref.
                  ?metaref ?pre ?obj.
                }
 
-select * where { ?pid rdf:type dha:RepoObject.
-                 ?pid dha:hasAnnotationDescription ?entityref.
-                 ?entityref dha:hasNamedEntity ?entity.
-                 ?entity dha:hasCatchPhrase ?label; rdf:type ?entitytype.
+select * where { ?pid a dha:RepoObject; dha:hasAnnotationDescription ?annoref.            
+                 ?annoref dha:hasAnnotationProperty ?propref.
+                 ?propref a dha:NamedEntity; dha:hasCatchPhrase ?catchphrase.
+                 optional { ?propref dha:hasIdentifier ?idref. 
+                            ?idref dha:hasParsableMetadata ?uri; dct:identifier ?id }
                }
 
-
-select * where { ?pid rdf:type dha:RepoObject.
-                 ?pid dha:hasDisseminationDescription ?dissref.
+select * where { ?pid a dha:RepoObject; dha:hasDisseminationDescription ?dissref.
                  ?dissref dha:hasDisseminationService ?servref.
-                 ?servref dha:conformsTo ?conformsTo.
+                 ?servref dha:conformsTo ?conformsTo; dct:identifier ?id.
                  optional { ?servref dha:hasMimeType ?mimetype }
                }

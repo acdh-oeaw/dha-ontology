@@ -9,6 +9,7 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/"
     xmlns:svcs="http://rdfs.org/sioc/services#"  xmlns:doap="http://usefulinc.com/ns/doap#"
     xmlns:premis="&premis;">
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -16,7 +17,7 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->  
-        
+            
     <dha:RepoObject rdf:about="&ex;o:obj.1">
         <dha:hasMetadataDescription rdf:resource="&ex;o:obj.1/METADATA"/>
         <dha:hasPreservationDescription rdf:resource="&ex;o:obj.1/PRESERVATION"/>
@@ -36,46 +37,50 @@
     </dha:PreservationDescription>
     
     <dha:DisseminationDescription rdf:about="&ex;o:obj.1/DISSEMINATION">
-        <dha:hasDisseminationService rdf:resource="http://digitale-edition.at/o:obj.1"/>
-        <dha:hasDisseminationService rdf:resource="http://digitale-edition.at/o:obj.1/sdef:TEI/getPDF"/>
-        <dha:hasDisseminationService rdf:resource="&ex;o:obj.1/iiif/IMAGE"/>
+        <dha:hasDisseminationService rdf:resource="&ex;o:obj.1/D.1"/>
+        <dha:hasDisseminationService rdf:resource="&ex;o:obj.1/D.2"/>
+        <dha:hasDisseminationService rdf:resource="&ex;o:obj.1/D.3"/>
     </dha:DisseminationDescription>
     
     <dha:AnnotationDescription rdf:about="&ex;o:obj.1/ANNOTATION">
-        <dha:hasNamedEntity rdf:resource="&ex;o:obj.1/E.1"/>
-        <dha:hasNamedEntity rdf:resource="&ex;o:obj.1/E.2"/>
-        <dha:hasNamedEntity rdf:resource="&ex;o:obj.1/E.3"/>
+        <dha:hasAnnotationProperty rdf:resource="&ex;o:obj.1/A.1"/>
+        <dha:hasAnnotationProperty rdf:resource="&ex;o:obj.1/A.2"/>
+        <dha:hasAnnotationProperty rdf:resource="&ex;o:obj.1/A.3"/>
     </dha:AnnotationDescription>
     
-    <dha:Place rdf:about="&ex;o:obj.1/E.1">
+    <dha:Place rdf:about="&ex;o:obj.1/A.1">
         <dha:hasCatchPhrase>Klagenfurt</dha:hasCatchPhrase>
      </dha:Place>
     
-    <dha:Person rdf:about="&ex;o:obj.1/E.2">
+    <dha:Person rdf:about="&ex;o:obj.1/A.2">
         <dha:hasCatchPhrase>Walter Fanta</dha:hasCatchPhrase>
     </dha:Person>
     
-    <dha:NamedEntity rdf:about="&ex;o:obj.1/E.3">
+    <dha:NamedEntity rdf:about="&ex;o:obj.1/A.3">
         <dha:hasCatchPhrase>Alpen-Adria-Universität Klagenfurt</dha:hasCatchPhrase>
-        <dha:hasIdentifier rdf:resource="&ex;o:obj.1/E.3/IDENTIFIER"/>
+        <dha:hasIdentifier rdf:resource="&ex;o:obj.1/A.3/IDENTIFIER"/>
     </dha:NamedEntity>
     
-    <dha:Identifier rdf:about="&ex;o:obj.1/E.3/IDENTIFIER">       
+    <dha:Identifier rdf:about="&ex;o:obj.1/A.3/IDENTIFIER">  
        <dha:conformsTo rdf:resource="http://d-nb.info/gnd"/>
+       <dct:identifier>http://d-nb.info/gnd/1083300504</dct:identifier>
        <dha:hasParsableMetadata rdf:resource="http://d-nb.info/gnd/1083300504/about/lds.rdf"/>
     </dha:Identifier>
     
-    <dha:DisseminationService rdf:about="http://digitale-edition.at/o:obj.1">
+    <dha:DisseminationService rdf:about="&ex;o:obj.1/D.1">
+        <dct:identifier>http://digitale-edition.at/o:obj.1</dct:identifier>
         <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
         <dha:hasMimeType rdf:resource="https://www.iana.org/assignments/media-types/text/html"/>
     </dha:DisseminationService>
-
-    <dha:DisseminationService rdf:about="http://digitale-edition.at/o:obj.1/sdef:TEI/getPDF">
+  
+    <dha:DisseminationService rdf:about="&ex;o:obj.1/D.2">
+        <dct:identifier>http://digitale-edition.at/o:obj.1/sdef:TEI/getPDF</dct:identifier>
         <dha:conformsTo rdf:resource="&dha;/service/api/getpdf"/>
         <dha:hasMimeType rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
     </dha:DisseminationService>
     
-    <dha:DisseminationService rdf:about="&ex;o:obj.1/iiif/IMAGE">
+    <dha:DisseminationService rdf:about="&ex;o:obj.1/D.3">
+        <dct:identifier>http://example.org/o:obj.1/iiif/IMAGE</dct:identifier>
         <dha:conformsTo rdf:resource="http://iiif.io/api/image"></dha:conformsTo>
     </dha:DisseminationService>
 
@@ -117,11 +122,12 @@
      -->  
        
        
-    <dha:ManuscriptEdition rdf:about="&ex;context:edition">
+    <dha:Collection rdf:about="&ex;context:edition">
+        <dha:hasType rdf:resource="&dha;CollectionType/DigitalScholarlyEdition"/>
         <dha:hasMetadataDescription rdf:resource="&ex;context:edition/METADATA"/>
         <dha:hasRepoObject rdf:resource="&ex;o:obj.1"/>
         <dha:hasRepoObject rdf:resource="&ex;o:obj.2"/>
-    </dha:ManuscriptEdition>
+    </dha:Collection>
 
     <dha:MetadataDescription rdf:about="&ex;context:edition/METADATA">
         <dc:title>Beispielsammlung</dc:title>

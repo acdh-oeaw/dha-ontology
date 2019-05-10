@@ -112,7 +112,7 @@
     <owl:ObjectProperty rdf:about="&dha;hasObject">
         <owl:inverseOf rdf:resource="&dha;isObjectOf"/>
         <rdfs:domain rdf:resource="&dha;Collection"/>
-        <rdfs:range rdf:resource="&dha;Object"/>
+        <rdfs:range rdf:resource="&dha;Object"/>	
     </owl:ObjectProperty>
    
     
@@ -287,7 +287,15 @@
      -->
         
     <owl:DatatypeProperty rdf:about="&premis;hasIdentifier">
-        <rdfs:domain rdf:resource="&dha;PreservationDescription"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="&dha;PreservationDescription"/>
+                    <owl:Class rdf:about="&dha;DisseminationService"/>
+                    <owl:Class rdf:about="&dha;Identifier"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
         <rdfs:comment xml:lang="en">Unique identifier given given by a persistent identifier service like Handle, PURL et al. </rdfs:comment>
     </owl:DatatypeProperty>
@@ -369,19 +377,7 @@
     //  Identifier
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-     
-      <owl:DatatypeProperty rdf:about="&dct;identifier">
-          <rdfs:domain>
-              <owl:Class>
-                  <owl:unionOf rdf:parseType="Collection">
-                      <owl:Class rdf:about="&dha;DisseminationService"/>
-                      <owl:Class rdf:about="&dha;Identifier"/>
-                  </owl:unionOf>
-              </owl:Class>
-          </rdfs:domain>
-          <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>   
-    
+        
     <owl:DatatypeProperty rdf:about="&dha;hasParsableMetadata">
         <rdfs:domain rdf:resource="&dha;Identifier"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>

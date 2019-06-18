@@ -74,7 +74,7 @@
             </dha:DisseminationService>
         </dha:DisseminationDescription>
     </dha:RepoObject>
-    
+    <!-- TODO: decide on the identifier for the physical object! -->
 	<dha:Object  rdf:about="_:physicalObj-AC02644333">
 	<dha:hasMetadataDescription>
         <dha:MetadataDescription rdf:parseType="Resource">
@@ -86,13 +86,16 @@
             <dc:creator rdf:resource="http://d-nb.info/gnd/119188295" />
 			<dc:issued rdf:type="xsd:Date">1856</dc:issued>
 			<!-- source:  <mods:place><mods:placeTerm type="text">Wien</mods:placeTerm>
-			equivalent: vra:placeOfPublication -->
+			equivalent: vra:placeOfPublication 
+			TODO: DEFINE property for publication place -->
 			<dha:publicationPlace rdf:resource="http://www.geonames.org/2761367" />			
 			<!-- source: mods:note -->
 			<dc:description>Mit politische Eintheilung der Oesterreichischeb Monarchie</dc:description>
 			<dc:description>Mit Farben-Erklärung und Zahl der Angehörigen der verschiedenen Sprachstämme</dc:description>
+			<!-- source: mods:extent -->
 			<dc:extent>1 Kt.</dc:extent>
 			<dc:extent>78 x 57 cm</dc:extent>
+			<!-- source: mods:form-->
 			<dc:format>Lithogr., mehrfarbig</dc:format>
         </dha:MetadataDescription>
 	  </dha:hasMetadataDescription>
@@ -100,12 +103,14 @@
 	   <dha:hasPreservationDescription>
         <dha:PreservationDescription rdf:parseType="Resource">
 			  <!-- source <mods:note type="statement of responsibility">Bestand der Kartensammlung der Fachbereichsbibliothek Geographie und Regionalforschung, Universität Wien</mods:note> -->
+			<!--TODO: define property, describing some provenance aspect -->
 			<dha:??>Bestand der Kartensammlung der Fachbereichsbibliothek Geographie und Regionalforschung, Universität Wien</dha:??>
         </dha:PreservationDescription>
 		</dha:hasPreservationDescription>
 	</dha:Object>
 	
 	<dha:Person rdf:about="http://d-nb.info/gnd/119188295">
+<!-- TODO: define properties describing person -->
 		<dha:forename>Karl von</dha:forename>
 		<dha:surname>Czörnig</dha:surname>
 	</dha:Person>

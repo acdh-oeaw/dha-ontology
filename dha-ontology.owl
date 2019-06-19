@@ -12,35 +12,22 @@
     <!ENTITY ebucore "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#">
 ]>
 
-<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:xml="&xml;" xmlns:xsd="&xsd;" xmlns:skos="&skos;" xmlns:dc="&dc;" xmlns:dct="&dct;"
-    xmlns:foaf="&foaf;" xmlns:dha="&dha;">
-
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xml="&xml;" xmlns:xsd="&xsd;"
+    xmlns:skos="&skos;" xmlns:dc="&dc;" xmlns:dct="&dct;" xmlns:foaf="&foaf;" xmlns:dha="&dha;">
     <owl:Ontology rdf:about="https://digital-humanities.at/schema">
         <rdfs:label>DHA Ontology</rdfs:label>
         <dct:modified>2019-05-03</dct:modified>
-        <rdfs:comment xml:lang="en">Dies ist die gemeinsame Ontologie für Digital Humanities
-            Austria. Sie dient der Beschreibung von digitalen Objekten im Kontext der
-            DH-Forschung.</rdfs:comment>
-        <rdfs:comment>In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das
-            Subject und &quot;Ressource B&quot; das Objekt. When Definitionen aus anderen Schemata
-            (z. B. DataCite) wiederverwendet werden, wird die Referenz in Klammern angegeben:
-            (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist
-            die Referenz mit &quot;cf.&quot; markiert.</rdfs:comment>
-        <rdfs:comment xml:lang="en">This is the ontology for Digital Humanities Austria. It serves
-            the description of digital objects in the context of DH-research.</rdfs:comment>
-        <rdfs:comment>In definitions of properties, &quot;resource A&quot; refers to the subject
-            resource of the property and &quot;resource B&quot; to the object resource. When reusing
-            definitions from other vocabularies (esp. DataCite), the reference is given in brackets:
-            (DataCite: ContactPerson). When the source definition was changed slightly the reference
-            is marked with &quot;cf.&quot;</rdfs:comment>
-        <owl:versionInfo xml:lang="de">2019-04-05 - Erste Fassung *native"-Ansatz (Klassen und
-            properties im eigenen Namespace) - basierend auf dem KONDE Workshop, Wien 2019-03-12/13;
+        <rdfs:comment xml:lang="en">Dies ist die gemeinsame Ontologie für Digital Humanities Austria. Sie dient der Beschreibung von digitalen Objekten im Kontext der DH-Forschung.</rdfs:comment>
+        <rdfs:comment>In den Definitionen der Eigenschaften, meint &quot;Ressource A&quot; das Subject und &quot;Ressource B&quot; das Objekt. When Definitionen aus anderen Schemata (z. B. DataCite)
+            wiederverwendet werden, wird die Referenz in Klammern angegeben: (DataCite: ContactPerson). When die ursprüngliche Definition leicht angepasst wurde, ist die Referenz mit &quot;cf.&quot;
+            markiert.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This is the ontology for Digital Humanities Austria. It serves the description of digital objects in the context of DH-research.</rdfs:comment>
+        <rdfs:comment>In definitions of properties, &quot;resource A&quot; refers to the subject resource of the property and &quot;resource B&quot; to the object resource. When reusing definitions
+            from other vocabularies (esp. DataCite), the reference is given in brackets: (DataCite: ContactPerson). When the source definition was changed slightly the reference is marked with
+            &quot;cf.&quot;</rdfs:comment>
+        <owl:versionInfo xml:lang="de">2019-04-05 - Erste Fassung *native"-Ansatz (Klassen und properties im eigenen Namespace) - basierend auf dem KONDE Workshop, Wien 2019-03-12/13;
             [https://digital-humanities.at/schema]</owl:versionInfo>
     </owl:Ontology>
-
-  
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -48,32 +35,24 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-     
-      <owl:ObjectProperty rdf:about="&dct;isPartOf">
+    <owl:ObjectProperty rdf:about="&dct;isPartOf">
         <owl:equivalentProperty rdf:resource="&dha;isPartOf"/>
-      </owl:ObjectProperty>
-    
-      <owl:ObjectProperty rdf:about="&dct;hasPart">
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="&dct;hasPart">
         <owl:equivalentProperty rdf:resource="&dha;hasPart"/>
-      </owl:ObjectProperty>
-   
-      <owl:DatatypeProperty rdf:about="&dct;accessRights">
+    </owl:ObjectProperty>
+    <owl:DatatypeProperty rdf:about="&dct;accessRights">
         <owl:equivalentProperty rdf:resource="&dha;hasAccessRights"/>
-      </owl:DatatypeProperty>
-    
-      <owl:DatatypeProperty rdf:about="&dct;license">
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&dct;license">
         <owl:equivalentProperty rdf:resource="&dha;hasLicense"/>
-      </owl:DatatypeProperty>
-   
-      <owl:DatatypeProperty rdf:about="&ebucore;hasMimeType">
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&ebucore;hasMimeType">
         <owl:equivalentProperty rdf:resource="&dha;hasMimeType"/>
-      </owl:DatatypeProperty>
- 
-      <owl:DatatypeProperty rdf:about="&dct;conformsTo">
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="&dct;conformsTo">
         <owl:equivalentProperty rdf:resource="&dha;conformsTo"/>
-      </owl:DatatypeProperty>
-    
- 
+    </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -81,13 +60,11 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  Collection
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    
     <owl:ObjectProperty rdf:about="&dha;hasMetadataDescription">
         <owl:inverseOf rdf:resource="&dha;isMetadataDescriptionOf"/>
         <rdfs:domain>
@@ -102,57 +79,66 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="&dha;MetadataDescription"/>
     </owl:ObjectProperty>
-    
     <owl:ObjectProperty rdf:about="&dha;hasRepoCollection">
         <owl:inverseOf rdf:resource="&dha;isRepoCollectionOf"/>
         <rdfs:domain rdf:resource="&dha;Collection"/>
         <rdfs:range rdf:resource="&dha;RepoCollection"/>
     </owl:ObjectProperty>
-    
     <owl:ObjectProperty rdf:about="&dha;hasObject">
         <owl:inverseOf rdf:resource="&dha;isObjectOf"/>
         <rdfs:domain rdf:resource="&dha;Collection"/>
-        <rdfs:range rdf:resource="&dha;Object"/>	
+        <rdfs:range rdf:resource="&dha;Object"/>
     </owl:ObjectProperty>
-   
-    
+    <!-- RepoCollection; RepoObject :basedOn,  isBasedOn  -->
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
-    //  Object
+    //  RepoObject
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-      
-    <owl:ObjectProperty rdf:about="&dha;hasRepoObject">
-        <owl:inverseOf rdf:resource="&dha;isRepoObjectOf"/>
-        <rdfs:domain rdf:resource="&dha;Object"/>
-        <rdfs:range rdf:resource="&dha;RepoObject"/>
+    
+    <owl:ObjectProperty rdf:about="&dha;basedOn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="&dha;RepoObject"/>
+                    <owl:Class rdf:about="&dha;RepoCollection"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="&dha;RepoObject"/>
+                    <owl:Class rdf:about="&dha;Object"/>
+                    <owl:Class rdf:about="&dha;RepoCollection"/>
+                    <owl:Class rdf:about="&dha;Collection"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
     </owl:ObjectProperty>
-   
-   
-     <!-- 
+    
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  RepoCollection
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-     
     <owl:ObjectProperty rdf:about="&dha;hasPreservationDescription">
         <owl:inverseOf rdf:resource="&dha;isPreservationDescriptionOf"/>
         <rdfs:domain>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">  
-                   <owl:Class rdf:about="&dha;RepoCollection"/>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="&dha;RepoCollection"/>
                     <owl:Class rdf:about="&dha;RepoObject"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="&dha;PreservationDescription"/>
     </owl:ObjectProperty>
-    
     <owl:ObjectProperty rdf:about="&dha;hasDisseminationDescription">
         <owl:inverseOf rdf:resource="&dha;isDisseminationDescriptionOf"/>
         <rdfs:domain>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">  
+                <owl:unionOf rdf:parseType="Collection">
                     <owl:Class rdf:about="&dha;RepoCollection"/>
                     <owl:Class rdf:about="&dha;RepoObject"/>
                     <owl:Class rdf:about="&dha;Resource"/>
@@ -161,68 +147,64 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="&dha;DisseminationDescription"/>
     </owl:ObjectProperty>
-      
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  RepoObject
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    
     <owl:ObjectProperty rdf:about="&dha;hasAnnotationDescription">
         <owl:inverseOf rdf:resource="&dha;isAnnotationDescriptionOf"/>
         <rdfs:domain rdf:resource="&dha;RepoObject"/>
         <rdfs:range rdf:resource="&dha;AnnotationDescription"/>
-    </owl:ObjectProperty>   
-     
+    </owl:ObjectProperty>
     <owl:ObjectProperty rdf:about="&dha;isPartOf">
         <owl:inverseOf rdf:resource="&dha;hasPart"/>
         <rdfs:domain rdf:resource="&dha;RepoObject"/>
         <rdfs:range rdf:resource="&dha;RepoCollection"/>
     </owl:ObjectProperty>
-    
     <owl:ObjectProperty rdf:about="&dha;hasResource">
         <owl:inverseOf rdf:resource="&dha;isResourceOf"/>
         <rdfs:domain rdf:resource="&dha;RepoObject"/>
         <rdfs:range rdf:resource="&dha;Resource"/>
     </owl:ObjectProperty>
- 
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  DisseminationDescription
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-            
     <owl:ObjectProperty rdf:about="&dha;hasDisseminationService">
         <owl:inverseOf rdf:resource="&dha;isDisseminationServiceOf"/>
         <rdfs:domain rdf:resource="&dha;DisseminationDescription"/>
         <rdfs:range rdf:resource="&dha;DisseminationService"/>
-    </owl:ObjectProperty>       
-
+    </owl:ObjectProperty>
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //  Feature
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    <owl:ObjectProperty rdf:about="&dha;hasFeature">
+        <rdfs:domain rdf:resource="&dha;RepoObject"/>
+        <rdfs:range rdf:resource="&dha;Feature"/>
+    </owl:ObjectProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  AnnotationDescription
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    
     <owl:ObjectProperty rdf:about="&dha;hasAnnotationProperty">
         <owl:inverseOf rdf:resource="&dha;isAnnotationPropertyOf"/>
         <rdfs:domain rdf:resource="&dha;AnnotationDescription"/>
         <rdfs:range rdf:resource="&dha;AnnotationProperty"/>
-    </owl:ObjectProperty>      
-    
+    </owl:ObjectProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  AnnotationProperty
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    
     <owl:ObjectProperty rdf:about="&dha;hasIdentifier">
-        <owl:inverseOf rdf:resource="&dha;isIdentifierOf"/>
         <rdfs:domain rdf:resource="&dha;AnnotationProperty"/>
         <rdfs:range rdf:resource="&dha;Identifier"/>
-    </owl:ObjectProperty>      
-    
+    </owl:ObjectProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -230,15 +212,12 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  Collection
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    
     <owl:DatatypeProperty rdf:about="&dha;hasType">
-        <owl:inverseOf rdf:resource="&dha;isTypeOf"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -251,41 +230,32 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="&dha;anyURI"/>
     </owl:DatatypeProperty>
-     
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  MetadataDescription
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-  
     <owl:DatatypeProperty rdf:about="&dc;title">
         <rdfs:domain rdf:resource="&dha;MetadataDescription"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
-    
     <owl:DatatypeProperty rdf:about="&dc;identifier">
         <rdfs:domain rdf:resource="&dha;MetadataDescription"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
-    
     <owl:DatatypeProperty rdf:about="&dc;creator">
         <rdfs:domain rdf:resource="&dha;MetadataDescription"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
-
     <owl:DatatypeProperty rdf:about="&dc;contributor">
         <rdfs:domain rdf:resource="&dha;MetadataDescription"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>   
-    
-   
+    </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  PreservationDescription
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-        
     <owl:DatatypeProperty rdf:about="&premis;hasIdentifier">
         <rdfs:domain>
             <owl:Class>
@@ -299,30 +269,24 @@
         <rdfs:range rdf:resource="&xsd;anyURI"/>
         <rdfs:comment xml:lang="en">Unique identifier given given by a persistent identifier service like Handle, PURL et al. </rdfs:comment>
     </owl:DatatypeProperty>
-     
     <owl:DatatypeProperty rdf:about="&dha;hasAccessRights">
         <rdfs:domain rdf:resource="&dha;PreservationDescription"/>
         <!-- public restricted academic -->
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
- 
     <owl:DatatypeProperty rdf:about="&dha;hasLicense">
         <rdfs:domain rdf:resource="&dha;PreservationDescription"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>   
-  
-  
+    </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  DisseminationService
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-         
     <owl:DatatypeProperty rdf:about="&dha;hasAnchorLabel">
         <rdfs:domain rdf:resource="&dha;DisseminationService"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>  
-    
+    </owl:DatatypeProperty>
     <owl:DatatypeProperty rdf:about="&dha;conformsTo">
         <rdfs:domain>
             <owl:Class>
@@ -334,7 +298,6 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
-    
     <owl:DatatypeProperty rdf:about="&dha;hasMimeType">
         <rdfs:domain>
             <owl:Class>
@@ -346,43 +309,33 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
-      
-      
-     <!-- 
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  AnnotationProperty
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-          
-        
     <owl:DatatypeProperty rdf:about="&dha;hasCatchPhrase">
         <rdfs:domain rdf:resource="&dha;AnnotationProperty"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>      
-   
+    </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  Timespan
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-   
     <owl:DatatypeProperty rdf:about="&dha;hasISODate">
         <rdfs:domain rdf:resource="&dha;Timespan"/>
         <rdfs:range rdf:resource="&xsd;date"/>
     </owl:DatatypeProperty>
-    
-     
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //  Identifier
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-        
     <owl:DatatypeProperty rdf:about="&dha;hasParsableMetadata">
         <rdfs:domain rdf:resource="&dha;Identifier"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </owl:DatatypeProperty>  
-      
+    </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -390,90 +343,70 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-
-
     <!-- owl:Class rdf:about="&dha;Class"/ -->
-    
     <owl:Class rdf:about="&dha;Collection">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;Object">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;RepoCollection">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;RepoObject">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
-    <owl:Class rdf:about="&dha;MetadataDescription">
-        <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->       
+    <owl:Class rdf:about="&dha;Feature">
+        <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
+    <owl:Class rdf:about="&dha;MetadataDescription">
+        <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
+    </owl:Class>
     <owl:Class rdf:about="&dha;PreservationDescription">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
-    <owl:Class rdf:about="&dha;AnnotationDescription" >
+    <owl:Class rdf:about="&dha;AnnotationDescription">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
-    <owl:Class rdf:about="&dha;AnnotationProperty" >
+    <owl:Class rdf:about="&dha;AnnotationProperty">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;NamedEntity">
         <rdfs:subClassOf rdf:resource="&dha;AnnotationProperty"/>
     </owl:Class>
-
     <owl:Class rdf:about="&dha;Person">
         <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;Place">
-            <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
+        <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
     </owl:Class>
-
     <owl:Class rdf:about="&dha;Work">
-            <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
+        <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
     </owl:Class>
-
     <owl:Class rdf:about="&dha;Organization">
-            <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
+        <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
     </owl:Class>
-           
     <owl:Class rdf:about="&dha;Artefact">
-            <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
+        <rdfs:subClassOf rdf:resource="&dha;NamedEntity"/>
     </owl:Class>
-
     <owl:Class rdf:about="&dha;Concept">
         <rdfs:subClassOf rdf:resource="&dha;AnnotationProperty"/>
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;Timespan">
         <rdfs:subClassOf rdf:resource="&dha;AnnotationProperty"/>
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;DisseminationDescription">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;DisseminationService">
-        <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->     
-    </owl:Class>    
-    
+        <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
+    </owl:Class>
     <owl:Class rdf:about="&dha;Resource">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-    
     <owl:Class rdf:about="&dha;Identifier">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
     </owl:Class>
-              
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -481,7 +414,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-     
     <!--  owl:Class rdf:about="&dha;ImageCollection">
         <rdfs:subClassOf rdf:resource="&dha;Collection"/>
     </owl:Class>
@@ -513,6 +445,4 @@
     <owl:Class rdf:about="&dha;ResearchDataCollection">
         <rdfs:subClassOf rdf:resource="&dha;Collection"/>
     </owl:Class -->
- 
-    
 </rdf:RDF>

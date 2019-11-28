@@ -16,9 +16,23 @@
     
     <owl:Ontology rdf:about="https://digital-humanities.at/schema">
         <rdfs:label>DHA Ontology</rdfs:label>
-        <dct:modified>2019-05-03</dct:modified>
+        <dct:modified>2019-11-26</dct:modified>
+        <dc:contributor>Christiane Fritze</dc:contributor>
+        <dc:contributor>Peter Hinkelmanns</dc:contributor>
+        <dc:contributor>Richard Hörmann</dc:contributor>
+        <dc:contributor>Carina Koch</dc:contributor>
+        <dc:contributor>Elmar Lenhart</dc:contributor>
+        <dc:contributor>Ulrich Lobis</dc:contributor>
+        <dc:contributor>Durco Matej</dc:contributor>
+        <dc:contributor>Christopher Pollin</dc:contributor>
+        <dc:contributor>Daniel Schlager</dc:contributor>
+        <dc:contributor>Daniel Schopper</dc:contributor>
+        <dc:contributor>Christian Steiner</dc:contributor>
+        <dc:contributor>Elisabeth Steiner</dc:contributor>
+        <dc:contributor>Johannes Stigler</dc:contributor>
+        <dc:contributor>Martina Trognitz</dc:contributor>
         <rdfs:comment xml:lang="de">Dies ist eine Ontologie der Digital Humanities Austria Community. Sie dient der Beschreibung von (digitalen) Objekten im Kontext der DH-Forschung. Sie unterstützt die Interoperabilität und Wiederverwendbarkeit von Objekten aus unterschiedlichen Repositorien und ermöglicht die Langzeitarchivierung an verteilten Standorten mit unterschiedlichen Repositoriumsinfrastrukturen.</rdfs:comment>
-        <owl:versionInfo xml:lang="de">2019-11-28/dha/1.0</owl:versionInfo>
+        <owl:versionInfo xml:lang="de">2019-11-28/0.3</owl:versionInfo>
     </owl:Ontology>
     
     <!-- 

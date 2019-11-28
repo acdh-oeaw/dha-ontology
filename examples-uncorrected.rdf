@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE RDF [
+   <!ENTITY dha "https://digital-humanities.at/schema#"> 
+   <!ENTITY ex "https://example.org/"> 
+   <!ENTITY premis "http://www.loc.gov/premis/rdf/v1#"> 
+ ]> 
+
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dha="&dha;"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:svcs="http://rdfs.org/sioc/services#" xmlns:doap="http://usefulinc.com/ns/doap#"
+    xmlns:premis="&premis;">
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Beispiel MHDBDB
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <dha:RepoObject rdf:about="http://digitale-edition.at/o:obj.mhdbdb">
+        <dha:basedOn rdf:resource="gams/edition"/> 
+        <dha:hasMetadataDescription>
+            <dha:MetadataDescription>
+                <dc:title>Beispielobjekt MHDBDB</dc:title>
+                <dc:identifier>o:obj.MHDBDB</dc:identifier>
+                <dc:creator>Peter Hinkelmanns</dc:creator>
+            </dha:MetadataDescription>
+        </dha:hasMetadataDescription>
+        <dha:hasFeature>
+            <dha:Feature rdf:about="uri">
+                <rdf:label>Part of Speech</rdf:label>
+            </dha:Feature>
+        </dha:hasFeature>
+        <dha:hasPreservationDescription>
+            <dha:PreservationDescription rdf:parseType="Resource">
+                <premis:hasIdentifier rdf:resource="http://digitale-edition.at/o:obj.mhdbdb"/>
+                <dha:hasLicense rdf:resource="https://creativecommons.org/licenses/by-nc/4.0/"/>
+            </dha:PreservationDescription>
+        </dha:hasPreservationDescription>
+        <dha:hasAnnotationDescription>
+            <dha:AnnotationDescription rdf:parseType="Resource">
+                <dha:hasAnnotationProperty>
+                    <dha:AnnotationProperty rdf:parseType="Resource">
+                          <dha:Concept>
+                            <dha:hasCatchPhrase>Lemmatisierung</dha:hasCatchPhrase>
+                        </dha:Concept>
+                    </dha:AnnotationProperty>
+                </dha:hasAnnotationProperty>
+                <dha:hasAnnotationProperty>
+                    <dha:AnnotationProperty rdf:parseType="Resource">
+                        <dha:Concept rdf:parseType="Resource">
+                            <dha:hasCatchPhrase>Part of Speech</dha:hasCatchPhrase>
+                        </dha:Concept>
+                    </dha:AnnotationProperty>
+                </dha:hasAnnotationProperty>
+                <dha:hasAnnotationProperty>
+                    <dha:AnnotationProperty rdf:parseType="Resource">
+                        <dha:Concept rdf:parseType="Resource">
+                            <dha:hasCatchPhrase>Meaning in context</dha:hasCatchPhrase>
+                        </dha:Concept>
+                    </dha:AnnotationProperty>
+                </dha:hasAnnotationProperty>
+            </dha:AnnotationDescription>
+        </dha:hasAnnotationDescription>
+        <dha:DisseminationDescription rdf:parseType="Resource">
+            <dha:DisseminationService rdf:parseType="Resource">
+                <premis:hasIdentifier>http://dhPLUS.sbg.ac.at/o:obj.MHDBDB</premis:hasIdentifier>>
+                <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
+                <dha:hasMimeType
+                    rdf:resource="https://www.iana.org/assignments/media-types/text/html"/>
+            </dha:DisseminationService>
+            <dha:DisseminationService rdf:parseType="Resource">
+                <premis:hasIdentifier>http://dhPLUS.sbg.ac.at/o:obj.MHDBDB/sdef:TEI/getPDF</premis:hasIdentifier>
+                <dha:conformsTo rdf:resource="&dha;/service/api/getpdf"/>
+                <dha:hasMimeType
+                    rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+            </dha:DisseminationService>
+            <dha:DisseminationService rdf:parseType="Resource">
+                <premis:hasIdentifier>http://dhPLUS.sbg.ac.at/o:obj.MHDBDB/sdef:TEI</premis:hasIdentifier>
+                <dha:conformsTo rdf:resource="&dha;/service/api/gettei"/>
+                <dha:hasMimeType
+                    rdf:resource="https://www.iana.org/assignments/media-types/application/tei+xml"/>
+            </dha:DisseminationService>
+        </dha:DisseminationDescription>
+    </dha:RepoObject>
+    
+    <dha:RepoObject rdf:about="gams/edition">
+        <dha:isRepoObjectOf rdf:resource="http://obvsg.at/acn-nnnnnn"/>
+    </dha:RepoObject>
+    
+    <dha:Object rdf:about="http://obvsg.at/acn-nnnnnn">
+        <!--  -->
+        <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.mhdbdb"/>
+    </dha:Object>
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Beispiel - Gruppe 2 (Salzburg); 
+	// Objekt Phaidra:
+	//	https://phaidra.univie.ac.at/detail_object/o:955565
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    <dha:RepoObject rdf:about="https://hdl.handle.net/11353/10.955565">
+        <dha:isRepoObjectOf rdf:resource="_:physicalObj-AC02644333" />
+        <dha:hasMetadataDescription>
+            <dha:MetadataDescription rdf:parseType="Resource">
+                <!-- source: mods:title -->
+                <dc:title>Ethnographische Karte der Oesterreichischen Monarchie</dc:title>
+                <dc:identifier>11353/10.955565</dc:identifier>
+                <!-- source: mods:recordContentSource -->
+                <!-- TODO: discuss if duplicate property as string and entity 
+			   rather not. -->
+                <dc:contributor>Universitätsbibliothek Wien</dc:contributor>
+                <dc:contributor rdf:resource="https://bibliothek.univie.ac.at" />
+            </dha:MetadataDescription>
+        </dha:hasMetadataDescription>
+        <dha:hasPreservationDescription>
+            <dha:PreservationDescription rdf:parseType="Resource">
+                <premis:hasIdentifier rdf:resource="https://hdl.handle.net/11353/10.955565"/>
+                <!-- source: mods:accessCondition -->
+                <dha:hasLicense rdf:resource="https://creativecommons.org/licenses/by-nc/4.0/"/>
+            </dha:PreservationDescription>
+        </dha:hasPreservationDescription>
+        <dha:hasAnnotationDescription>
+            <dha:AnnotationDescription rdf:parseType="Resource">
+                <dha:AnnotationProperty rdf:parseType="Resource">
+                    <dha:Place rdf:parseType="Resource">
+                        <dha:hasCatchPhrase>Österreichische Monarchie</dha:hasCatchPhrase>
+                        <dha:Identifier rdf:parseType="Resource">
+                            <premis:hasIdentifier>http://d-nb.info/gnd/???</premis:hasIdentifier>
+                            <dha:conformsTo rdf:resource="http://d-nb.info/gnd"/>
+                            <dha:hasParsableMetadata rdf:resource="http://d-nb.info/gnd/???/about/lds.rdf"/>
+                        </dha:Identifier>
+                    </dha:Place>
+                    
+                </dha:AnnotationProperty>
+                <dha:Timespan>
+                    <dha:date>1856</dha:date>
+                </dha:Timespan>
+            </dha:AnnotationDescription>
+        </dha:hasAnnotationDescription>
+        
+        <dha:DisseminationDescription rdf:parseType="Resource">
+            <dha:DisseminationService rdf:parseType="Resource">
+                <premis:hasIdentifier>https://phaidra.univie.ac.at/preview/resample/o:955565/300/jpg</premis:hasIdentifier>>
+                <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
+                <dha:hasMimeType rdf:resource="https://www.iana.org/assignments/media-types/image/jpg"/>
+            </dha:DisseminationService>
+            
+            <dha:DisseminationService rdf:parseType="Resource">
+                <premis:hasIdentifier>https://phaidra.univie.ac.at/exif_viewer/o:955565</premis:hasIdentifier>
+                <dha:conformsTo rdf:resource="?dha;/service/exif??"/>
+            </dha:DisseminationService>
+            <dha:DisseminationService rdf:parseType="Resource">
+                <premis:hasIdentifier><!-- TODO: link to IIIF or other image server --></premis:hasIdentifier>
+                <dha:conformsTo rdf:resource="http://iiif.io/api/image"/>
+            </dha:DisseminationService>
+        </dha:DisseminationDescription>
+    </dha:RepoObject>
+    <!-- TODO: decide on the identifier for the physical object! -->
+    <dha:Object  rdf:about="_:physicalObj-AC02644333">
+        <dha:hasMetadataDescription>
+            <dha:MetadataDescription rdf:parseType="Resource">
+                <!-- source: mods:title -->
+                <dc:title>Ethnographische Karte der Oesterreichischen Monarchie</dc:title>
+                <!-- source: mods:idnetifier -->
+                <dc:identifier>AC02644333</dc:identifier>
+                <!-- source: mods:recordContentSource -->
+                <dc:creator rdf:resource="http://d-nb.info/gnd/119188295" />
+                <dc:issued rdf:type="xsd:Date">1856</dc:issued>
+                <!-- source:  <mods:place><mods:placeTerm type="text">Wien</mods:placeTerm>
+			equivalent: vra:placeOfPublication 
+			TODO: DEFINE property for publication place -->
+                <dha:publicationPlace rdf:resource="http://www.geonames.org/2761367" />			
+                <!-- source: mods:note -->
+                <dc:description>Mit politische Eintheilung der Oesterreichischeb Monarchie</dc:description>
+                <dc:description>Mit Farben-Erklärung und Zahl der Angehörigen der verschiedenen Sprachstämme</dc:description>
+                <!-- source: mods:extent -->
+                <dc:extent>1 Kt.</dc:extent>
+                <dc:extent>78 x 57 cm</dc:extent>
+                <!-- source: mods:form-->
+                <dc:format>Lithogr., mehrfarbig</dc:format>
+            </dha:MetadataDescription>
+        </dha:hasMetadataDescription>
+        
+        <dha:hasPreservationDescription>
+            <dha:PreservationDescription rdf:parseType="Resource">
+                <!-- source <mods:note type="statement of responsibility">Bestand der Kartensammlung der Fachbereichsbibliothek Geographie und Regionalforschung, Universität Wien</mods:note> -->
+                <!--TODO: define property, describing some provenance aspect -->
+                <dha:??>Bestand der Kartensammlung der Fachbereichsbibliothek Geographie und Regionalforschung, Universität Wien</dha:??>
+            </dha:PreservationDescription>
+        </dha:hasPreservationDescription>
+    </dha:Object>
+    
+    <dha:Person rdf:about="http://d-nb.info/gnd/119188295">
+        <!-- TODO: define properties describing person -->
+        <dha:forename>Karl von</dha:forename>
+        <dha:surname>Czörnig</dha:surname>
+    </dha:Person>
+    
+    <dha:Organization rdf:about="http://bibliothek.univie.ac.at" >
+        <!-- TODO: property name of an organisation? -->
+        <dc:??>Universitätsbibliothek Wien</dc:??>
+    </dha:Organization>
+    
+    
+    <dha:RepoCollection rdf:about=
+        "https://hdl.handle.net/11353/10.423816
+        ">
+        <dha:hasType rdf:resource="&dha;CollectionType/??"/>
+        <dha:hasMetadataDescription>
+            <dha:MetadataDescription rdf:parseType="Resource">
+                <dc:title>Digitalisierte Karten der Fachbereichsbibliothek Geographie und Regionalforschung</dc:title>
+                <!-- source: <dc:identifier> -->
+                <dc:identifier>https://phaidra.univie.ac.at/detail_object/o:423816</dc:identifier>
+                <!-- source: <dc:creator>Ub-Maps, Projekt</dc:creator> -->
+                <dc:creator>Projekt Ub-Maps</dc:creator>            
+            </dha:MetadataDescription> 
+        </dha:hasMetadataDescription>
+        <dha:hasRepoObject rdf:resource="https://hdl.handle.net/11353/10.955565"/>            
+        
+    </dha:RepoCollection>
+
+</rdf:RDF>

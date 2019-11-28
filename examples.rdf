@@ -7,7 +7,6 @@
 
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dha="&dha;" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/"
     xmlns:svcs="http://rdfs.org/sioc/services#" xmlns:doap="http://usefulinc.com/ns/doap#" xmlns:premis="&premis;">
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -38,19 +37,20 @@
             </dha:AnnotationProperty>
             <dha:AnnotationProperty rdf:parseType="Resource">
                 <dha:NamedEntity rdf:parseType="Resource">
-                    <dha:hasCatchPhrase>Österreichische Akademie der Wissenschaften</dha:hasCatchPhrase>
-                    <dha:Identifier rdf:parseType="Resource">
-                        <premis:hasIdentifier>http://d-nb.info/gnd/1083300504</premis:hasIdentifier>
-                        <dha:conformsTo rdf:resource="http://d-nb.info/gnd"/>
-                        <dha:hasParsableMetadata rdf:resource="http://d-nb.info/gnd/1083300504/about/lds.rdf"/>
-                    </dha:Identifier>
+                    <dha:Organization>
+                        <dha:hasCatchPhrase>Österreichische Akademie der Wissenschaften</dha:hasCatchPhrase>
+                        <dha:Identifier rdf:parseType="Resource">
+                            <premis:hasIdentifier>http://d-nb.info/gnd/1083300504</premis:hasIdentifier>
+                            <dha:conformsTo rdf:resource="http://d-nb.info/gnd"/>
+                            <dha:hasParsableMetadata rdf:resource="http://d-nb.info/gnd/1083300504/about/lds.rdf"/>
+                        </dha:Identifier>
+                    </dha:Organization>
                 </dha:NamedEntity>
             </dha:AnnotationProperty>
         </dha:AnnotationDescription>
         <dha:DisseminationDescription rdf:parseType="Resource">
             <dha:DisseminationService rdf:parseType="Resource">
-                <premis:hasIdentifier>http://digitale-edition.at/o:obj.1</premis:hasIdentifier>>
-                <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
+                <premis:hasIdentifier>http://digitale-edition.at/o:obj.1</premis:hasIdentifier>> <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
                 <dha:hasMimeType rdf:resource="https://www.iana.org/assignments/media-types/text/html"/>
             </dha:DisseminationService>
             <dha:DisseminationService rdf:parseType="Resource">
@@ -64,8 +64,6 @@
             </dha:DisseminationService>
         </dha:DisseminationDescription>
     </dha:RepoObject>
-    
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -98,12 +96,11 @@
                 <dha:Concept rdf:parseType="Resource">
                     <dha:hasCatchPhrase>Trusted Repository</dha:hasCatchPhrase>
                 </dha:Concept>
-             </dha:AnnotationProperty>
+            </dha:AnnotationProperty>
         </dha:AnnotationDescription>
         <dha:DisseminationDescription rdf:parseType="Resource">
             <dha:DisseminationService rdf:parseType="Resource">
-                <premis:hasIdentifier>http://digitale-edition.at/o:obj.2</premis:hasIdentifier>>
-                <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
+                <premis:hasIdentifier>http://digitale-edition.at/o:obj.2</premis:hasIdentifier>> <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
                 <dha:hasMimeType rdf:resource="https://www.iana.org/assignments/media-types/text/html"/>
             </dha:DisseminationService>
             <dha:DisseminationService rdf:parseType="Resource">
@@ -111,9 +108,8 @@
                 <dha:conformsTo rdf:resource="&dha;/service/api/getpdf"/>
                 <dha:hasMimeType rdf:resource="https://www.iana.org/assignments/media-types/text/xml"/>
             </dha:DisseminationService>
-         </dha:DisseminationDescription>
+        </dha:DisseminationDescription>
     </dha:RepoObject>
-    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -121,7 +117,6 @@
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
-    
     <dha:Collection rdf:about="http://digitale-edition.at/context:dse">
         <dha:hasType rdf:resource="&dha;CollectionType/DigitalScholarlyEdition"/>
         <dha:MetadataDescription rdf:parseType="Resource">
@@ -129,11 +124,80 @@
             <dc:identifier>context:dse</dc:identifier>
             <dc:creator>Johannes Stigler</dc:creator>
             <dc:rights>Creative Commons NonCommercial 4.0 International (CC BY-NC 4.0)</dc:rights>
-        </dha:MetadataDescription> 
+        </dha:MetadataDescription>
         <dha:RepoCollection rdf:parseType="Resource">
             <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.1"/>
             <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.2"/>
-        </dha:RepoCollection>   
+        </dha:RepoCollection>
     </dha:Collection>
-
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Beispiel 4
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    <dha:Collection rdf:about="http://digitale-edition.at/context:dse">
+        <dha:hasType rdf:resource="&dha;CollectionType/DigitalScholarlyEdition"/>
+        <dha:MetadataDescription rdf:parseType="Resource">
+            <dc:title>Beispielsammlung</dc:title>
+            <dc:identifier>context:dse</dc:identifier>
+            <dc:creator>Johannes Stigler</dc:creator>
+            <dc:rights>Creative Commons NonCommercial 4.0 International (CC BY-NC 4.0)</dc:rights>
+        </dha:MetadataDescription>
+        <dha:hasRepoCollection rdf:resource="http://digitale-edition.at/collection:1"/>
+    </dha:Collection>
+    <dha:RepoCollection rdf:about="http://digitale-edition.at/collection:1">
+        <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.1"/>
+        <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.2"/>
+    </dha:RepoCollection>
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Beispiel 5: Digitale Editionen an der Österreichischen Nationalbibliothek
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+    <dha:Collection rdf:about="http://edition.onb.ac.at">
+        <dha:hasType rdf:resource="&dha;CollectionType/CollectionOfDigitalScholarlyEdition"/>
+        <dha:hasMetadataDescription>
+            <dha:MetadataDescription>
+                <dc:title>Digitale Editionen an der Österreichischen Nationalbibliothek</dc:title>
+                <dc:identifier>http://edition.onb.ac.at</dc:identifier>
+                <dc:publisher>Österreichischen Nationalbibliothek</dc:publisher>
+                <dc:rights>Creative Commons NonCommercial 4.0 International (CC BY-NC 4.0)</dc:rights>
+            </dha:MetadataDescription>
+        </dha:hasMetadataDescription>
+        <dha:hasRepoCollection rdf:resource="http://edition.onb.ac.at/okopenko"/>
+    </dha:Collection>
+    <dha:RepoCollection rdf:about="http://edition.onb.ac.at/okopenko">
+        <dha:hasType rdf:resource="&dha;CollectionType/DigitalScholarlyEdition"/>
+        <dha:hasMetadataDescription>
+            <dha:MetadataDescription>
+                <dc:title>Tagebücher Andreas Okopenko</dc:title>
+                <dc:identifier>http://edition.onb.ac.at/okopenko</dc:identifier>
+                <dha:hasFunder rdf:resource="http://d-nb.info/gnd/2054142-9"/>
+                <dha:hasFunder>Fonds zur Förderung des wissenschaftlichen Forschung</dha:hasFunder>
+                <dc:publisher>Österreichischen Nationalbibliothek</dc:publisher>
+                <dc:rights>Creative Commons NonCommercial 4.0 International (CC BY-NC 4.0)</dc:rights>
+            </dha:MetadataDescription>
+        </dha:hasMetadataDescription>
+        <dha:hasRepoObject rdf:resource="https://edition.onb.ac.at/okopenko/o:oko.tb-19491219-19500104/methods/sdef:TEI/get"/>
+    </dha:RepoCollection>
+    <dha:RepoObject>
+        <dha:hasMetadataDescription>
+            <dha:MetadataDescription>
+                <dc:title>Tagebuch 19.12.1949–04.01.1950</dc:title>
+                <dc:contributor rdf:resource="http://d-nb.info/gnd/2020893-5"/>
+                <dc:contributor>Österreichische Nationalbibliothek</dc:contributor>
+                <dc:contributor/>
+            </dha:MetadataDescription>
+        </dha:hasMetadataDescription>
+        <dha:hasPreservationDescription>
+            <dha:PreservationDescription>
+                <premis:hasIdentifier rdf:resource="http://hdl.handle.net/11741/500.2"/>
+                <dha:hasLicense rdf:resource="https://creativecommons.org/licenses/by-nc/4.0/"/>
+            </dha:PreservationDescription>
+        </dha:hasPreservationDescription>
+    </dha:RepoObject>
 </rdf:RDF>

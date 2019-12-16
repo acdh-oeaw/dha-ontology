@@ -18,9 +18,9 @@
         <rdfs:comment xml:lang="de">Dies ist eine Ontologie der Digital Humanities Austria Community. Sie dient der Beschreibung von (digitalen) Objekten im Kontext der DH-Forschung. Sie unterstützt
             die Interoperabilität, Wiederverwendbarkeit und das zentrale Harvesting von Objekten aus unterschiedlichen Repositorien und ermöglicht die Langzeitarchivierung an verteilten Standorten mit
             unterschiedlichen Repositoriumsinfrastrukturen.</rdfs:comment>
-        <rdf:comment xml:lang="en">
+        <rdfs:comment xml:lang="en">
             This is an ontology of the Digital Humanities Austria Community. It describes (digital) objects in the context of DH research. It supports interoperability, reusability and central harvesting of objects from different repositories and enables long-term archiving at distributed locations with different repository infrastructures.
-        </rdf:comment>
+        </rdfs:comment>
         <dct:modified>2019-11-29</dct:modified>
         <dc:contributor>Matej Durco</dc:contributor>
         <dc:contributor>Christiane Fritze</dc:contributor>
@@ -226,7 +226,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="&dha;anyURI"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////

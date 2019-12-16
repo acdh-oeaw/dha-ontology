@@ -93,7 +93,8 @@
             </dha:Concept>
         </dha:hasAnnotationDescription>
         <dha:hasDisseminationDescription rdf:parseType="Resource">
-            <premis:hasIdentifier>http://digitale-edition.at/o:obj.2</premis:hasIdentifier>> <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
+            <premis:hasIdentifier>http://digitale-edition.at/o:obj.2</premis:hasIdentifier>
+            <dha:conformsTo rdf:resource="&dha;/service/api/get"/>
             <dha:hasMimeType rdf:resource="https://www.iana.org/assignments/media-types/text/html"/>
         </dha:hasDisseminationDescription>
         <dha:hasDisseminationDescription rdf:parseType="Resource">
@@ -139,7 +140,6 @@
         </dha:hasMetadataDescription>
         <dha:hasRepoCollection rdf:resource="http://digitale-edition.at/"/>
     </dha:Collection>
-    
     <dha:RepoCollection rdf:about="http://digitale-edition.at/">
         <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.1"/>
         <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.2"/>
@@ -161,7 +161,6 @@
         </dha:hasMetadataDescription>
         <dha:hasRepoCollection rdf:resource="http://edition.onb.ac.at/okopenko"/>
     </dha:Collection>
-    
     <dha:RepoCollection rdf:about="http://edition.onb.ac.at/okopenko">
         <dha:hasType rdf:resource="&dha;CollectionType/DigitalScholarlyEdition"/>
         <dha:hasMetadataDescription rdf:parseType="Resource">
@@ -174,7 +173,6 @@
         </dha:hasMetadataDescription>
         <dha:hasRepoObject rdf:resource="https://edition.onb.ac.at/o:oko.tb-19491219-19500104"/>
     </dha:RepoCollection>
-    
     <dha:RepoObject rdf:about="https://edition.onb.ac.at/o:oko.tb-19491219-19500104">
         <dha:hasMetadataDescription rdf:parseType="Resource">
             <dc:title>Tagebuch 19.12.1949–04.01.1950</dc:title>

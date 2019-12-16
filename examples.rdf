@@ -138,12 +138,11 @@
             <dc:creator>Johannes Stigler</dc:creator>
             <dc:rights>Creative Commons NonCommercial 4.0 International (CC BY-NC 4.0)</dc:rights>
         </dha:hasMetadataDescription>
-        <dha:hasRepoCollection rdf:resource="http://digitale-edition.at/"/>
+        <dha:hasRepoCollection rdf:parseType="Resource">
+            <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.1"/>
+            <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.2"/>
+        </dha:hasRepoCollection>
     </dha:Collection>
-    <dha:RepoCollection rdf:about="http://digitale-edition.at/">
-        <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.1"/>
-        <dha:hasRepoObject rdf:resource="http://digitale-edition.at/o:obj.2"/>
-    </dha:RepoCollection>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -152,7 +151,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
     <dha:Collection rdf:about="http://edition.onb.ac.at">
-        <dha:hasType rdf:resource="&dha;CollectionType/CollectionOfDigitalScholarlyEdition"/>
+        <dha:hasType rdf:resource="&dha;CollectionType/DigitalScholarlyEdition"/>
         <dha:hasMetadataDescription rdf:parseType="Resource">
             <dc:title>Digitale Editionen an der Österreichischen Nationalbibliothek</dc:title>
             <dc:identifier>http://edition.onb.ac.at</dc:identifier>
@@ -161,6 +160,7 @@
         </dha:hasMetadataDescription>
         <dha:hasRepoCollection rdf:resource="http://edition.onb.ac.at/okopenko"/>
     </dha:Collection>
+    
     <dha:RepoCollection rdf:about="http://edition.onb.ac.at/okopenko">
         <dha:hasType rdf:resource="&dha;CollectionType/DigitalScholarlyEdition"/>
         <dha:hasMetadataDescription rdf:parseType="Resource">
@@ -171,18 +171,18 @@
             <dc:publisher>Österreichischen Nationalbibliothek</dc:publisher>
             <dc:rights>Creative Commons NonCommercial 4.0 International (CC BY-NC 4.0)</dc:rights>
         </dha:hasMetadataDescription>
-        <dha:hasRepoObject rdf:resource="https://edition.onb.ac.at/o:oko.tb-19491219-19500104"/>
+        <dha:RepoObject rdf:parseType="Resource">
+            <dha:hasMetadataDescription rdf:parseType="Resource">
+                <dc:title>Tagebuch 19.12.1949–04.01.1950</dc:title>
+                <dc:contributor rdf:resource="http://d-nb.info/gnd/2020893-5"/>
+                <dc:contributor>Österreichische Nationalbibliothek</dc:contributor>
+                <dc:contributor/>
+            </dha:hasMetadataDescription>
+            <dha:hasPreservationDescription rdf:parseType="Resource">
+                <premis:hasIdentifier rdf:resource="http://hdl.handle.net/11741/500.2"/>
+                <dha:hasLicense rdf:resource="https://creativecommons.org/licenses/by-nc/4.0/"/>
+            </dha:hasPreservationDescription>
+        </dha:RepoObject>      
     </dha:RepoCollection>
-    <dha:RepoObject rdf:about="https://edition.onb.ac.at/o:oko.tb-19491219-19500104">
-        <dha:hasMetadataDescription rdf:parseType="Resource">
-            <dc:title>Tagebuch 19.12.1949–04.01.1950</dc:title>
-            <dc:contributor rdf:resource="http://d-nb.info/gnd/2020893-5"/>
-            <dc:contributor>Österreichische Nationalbibliothek</dc:contributor>
-            <dc:contributor/>
-        </dha:hasMetadataDescription>
-        <dha:hasPreservationDescription rdf:parseType="Resource">
-            <premis:hasIdentifier rdf:resource="http://hdl.handle.net/11741/500.2"/>
-            <dha:hasLicense rdf:resource="https://creativecommons.org/licenses/by-nc/4.0/"/>
-        </dha:hasPreservationDescription>
-    </dha:RepoObject>
+  
 </rdf:RDF>

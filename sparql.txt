@@ -2,46 +2,27 @@ prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix dc: <http://purl.org/dc/elements/1.1/>
 prefix dct: <http://purl.org/dc/terms/>
 prefix dha: <https://digital-humanities.at/schema#> 
-premis premis: <http://www.loc.gov/premis/rdf/v1#> 
+prefix premis: <http://www.loc.gov/premis/rdf/v1#> 
 
-select * where { ?pid a dha:RepoObject; dha:MetadataDescription ?metaref.
-                 ?metaref ?pre ?obj.
+select * where { ?oid a dha:RepoObject.
+  			   ?pid dha:isMetadataDescriptionOf ?oid.           
+                 ?pid ?p ?o.  
+                 filter regex(str(?p), "dc.*")                                                             
                }
 
-select * where { ?pid a dha:RepoObject; dha:AnnotationDescription ?annoref.            
-                 ?annoref dha:AnnotationProperty ?propref.
-                 ?propref ?pre ?obj.
-                }
-
-select * where { ?pid a dha:RepoObject; dha:AnnotationDescription ?annoref.            
-                 ?annoref dha:AnnotationProperty ?propref.
-                 ?propref dha:NamedEntity ?entityref.
-                 ?entityref dha:hasCatchPhrase ?catchphrase.
-                 optional { ?entityref dha:Identifier ?idref. 
-                            ?idref dha:hasParsableMetadata ?uri; dct:identifier ?id }
+select * where { ?oid a dha:RepoObject.
+  			   ?oid dha:hasAnnotationDescription ?description.     
+                 ?description ?p ?o             
                }
 
-select * where { ?pid a dha:RepoObject; dha:AnnotationDescription ?annoref.            
-                 ?annoref dha:AnnotationProperty ?propref.
-                 ?propref ?annoprop ?entityref.
-                 ?entityref dha:hasCatchPhrase ?catchphrase.
-                 optional { ?entityref dha:Identifier ?idref. 
-                            ?idref dha:hasParsableMetadata ?uri; dct:identifier ?id }
+select * where { ?oid a dha:RepoObject.
+  			   ?oid dha:hasPreservationDescription ?description.  
+                 ?description dha:hasLicense ?license               
+              }
+
+select * where { ?collection dha:hasType ?type.
+                 ?pid dha:isMetadataDescriptionOf ?collection.           
+                 ?pid ?p ?o.                                                             
+                 filter regex(str(?p), "dc.*")  
                }
                
-select * where { ?pid a dha:RepoObject; dha:DisseminationDescription ?dissref.
-                 ?dissref dha:DisseminationService ?servref.
-                 ?servref dha:conformsTo ?conformsTo; premis:hasIdentifier ?id.
-                 optional { ?servref dha:hasMimeType ?mimetype }
-               }
-               
-select * where { ?pid a dha:RepoObject; dha:PreservationDescription ?prepref.
-                 ?prepref dha:hasLicense ?license.
-                 ?prepref premis:hasIdentifier ?id
-               }
-      
-select * where { ?col dha:hasType <https://digital-humanities.at/schema#CollectionType/DigitalScholarlyEdition>.
-                 ?col dha:RepoCollection ?rcol .
-                 ?rcol dha:hasRepoObject ?pid .
-               }
-            

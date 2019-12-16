@@ -13,11 +13,14 @@
 ]>
 <rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xml="&xml;" xmlns:xsd="&xsd;"
     xmlns:skos="&skos;" xmlns:dc="&dc;" xmlns:dct="&dct;" xmlns:foaf="&foaf;" xmlns:dha="&dha;" xmlns:premis="&premis;">
-    <owl:Ontology rdf:about="https://digital-humanities.at/schema">
+    <owl:Ontology rdf:about="https://digital-humanities.at/schema" dc:title="DHA Ontology" dc:description="This is an ontology of the Digital Humanities Austria Community. It serves to describe (digital) objects in the context of DH research. It supports interoperability, reusability and central harvesting of objects from different repositories and enables long-term archiving at distributed locations with different repository infrastructures.">
         <rdfs:label>DHA Ontology</rdfs:label>
         <rdfs:comment xml:lang="de">Dies ist eine Ontologie der Digital Humanities Austria Community. Sie dient der Beschreibung von (digitalen) Objekten im Kontext der DH-Forschung. Sie unterstützt
             die Interoperabilität, Wiederverwendbarkeit und das zentrale Harvesting von Objekten aus unterschiedlichen Repositorien und ermöglicht die Langzeitarchivierung an verteilten Standorten mit
             unterschiedlichen Repositoriumsinfrastrukturen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">
+            This is an ontology of the Digital Humanities Austria Community. It describes (digital) objects in the context of DH research. It supports interoperability, reusability and central harvesting of objects from different repositories and enables long-term archiving at distributed locations with different repository infrastructures.
+        </rdfs:comment>
         <dct:modified>2019-11-29</dct:modified>
         <dc:contributor>Matej Durco</dc:contributor>
         <dc:contributor>Christiane Fritze</dc:contributor>
@@ -223,7 +226,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="&dha;anyURI"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -342,45 +345,63 @@
     <owl:Class rdf:about="&dha;Collection">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Eine Zusammenfassung von realen oder virtuellen Dingen und/oder Manifestationen kultureller Äußerungen zu einem Ganzen.</rdfs:comment>
-        <skos:example>Die Mineraliensammlung eines Museums</skos:example>
-        <skos:example>Der unaufgearbeitete Nachlass eines Forschenden</skos:example>
-        <skos:example>Die Werke einer Schriftstellerin</skos:example>
-        <skos:example>Beiträge auf einem Blog</skos:example>
+        <skos:example xml:lang="de">Die Mineraliensammlung eines Museums</skos:example>
+        <skos:example xml:lang="de">Der unaufgearbeitete Nachlass eines Forschenden</skos:example>
+        <skos:example xml:lang="de">Die Werke einer Schriftstellerin</skos:example>
+        <skos:example xml:lang="de">Beiträge auf einem Blog</skos:example>
+        <rdfs:comment xml:lang="en">An aggregation of real or virtual things and/or manifestations of cultural expressions.</rdfs:comment>
+        <skos:example xml:lang="en">The mineral collection of a museum</skos:example>
+        <skos:example xml:lang="en">The unprocessed estate of a researcher</skos:example>
+        <skos:example xml:lang="en">The works of a writer</skos:example>
+        <skos:example xml:lang="en">Posts on a blog</skos:example>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;Object">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Eine konzeptionell abgegrenzte Entität eines realen oder virtuellen Dinges und/oder eine Manifestation einer kulturellen Äußerung.</rdfs:comment>
-        <skos:example>Ein Manuskript</skos:example>
-        <skos:example>Eine Mineralie</skos:example>
-        <skos:example>Ein Tagebuch oder ein Tagbucheintrag</skos:example>
-        <skos:example>Ein Blogeintrag</skos:example>
+        <skos:example xml:lang="de">Ein Manuskript</skos:example>
+        <skos:example xml:lang="de">Eine Mineralie</skos:example>
+        <skos:example xml:lang="de">Ein Tagebuch oder ein Tagbucheintrag</skos:example>
+        <skos:example xml:lang="de">Ein Blogeintrag</skos:example>
+        <rdfs:comment xml:lang="en">A conceptually delimited entity of a real or virtual thing and/or a manifestation of a cultural expression.</rdfs:comment>
+        <skos:example xml:lang="en">A manuscript</skos:example>
+        <skos:example xml:lang="en">A mineral</skos:example>
+        <skos:example xml:lang="en">A diary or a diary entry</skos:example>
+        <skos:example xml:lang="en">A blog entry</skos:example>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;RepoCollection">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Eine digital repräsentierte Zusammenfassung von Objekten der Klasse RepoObject zu einem Ganzen in einem vertrauenswürdigen Langzeitarchiv.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A digitally represented aggregation of objects of the class RepoObject in a trustworthy long-term archive.</rdfs:comment>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;RepoObject">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Digital repräsentierte, konzeptionell abgegrenzte Entität realer oder virtueller Dinge und/oder Manifestationen kultureller Äußerungen in einem vertrauenswürdigen
             Langzeitarchiv, bestehend aus einer oder mehreren Resource(n), zugeordneten Disseminatoren, Metadatenbeschreibungen und Annotationen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A digitally represented, conceptually delimited entity of a real or virtual thing and/or a manifestation of a cultural expression, consisting of one or more resources, assigned disseminators, metadata descriptions and annotations.</rdfs:comment>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;MetadataDescription">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Deskriptive Metadaten zu den Klassen Collection, Object, RepoCollection, RepoObject mittels qualifiziertem Dublin Core.</rdfs:comment>
-        <skos:example>Bibliographische Metadaten zu einem Werk</skos:example>
-        <skos:example>Beschreibende Metadaten zu einer Sammlung wie Sammlungsort, -umfang, -bildner, Zeitraum der Sammlungserstellung</skos:example>
-        <skos:example>Beschreibende Metadaten zur digitalen Repräsentation einer Sammlung, wie Angaben zum Metadatenmanagement, Bezeichnung der hostenden Institution, Veröffentlichungsdatum
+        <skos:example xml:lang="de">Bibliographische Metadaten zu einem Werk</skos:example>
+        <skos:example xml:lang="de">Beschreibende Metadaten zu einer Sammlung wie Sammlungsort, -umfang, -bildner, Zeitraum der Sammlungserstellung</skos:example>
+        <skos:example xml:lang="de">Beschreibende Metadaten zur digitalen Repräsentation einer Sammlung, wie Angaben zum Metadatenmanagement, Bezeichnung der hostenden Institution, Veröffentlichungsdatum
             uvm.</skos:example>
+        <rdfs:comment xml:lang="en">Descriptive metadata for the classes Collection, Object, RepoCollection, RepoObject using qualified Dublin Core.</rdfs:comment>
+        <skos:example xml:lang="en">Bibliographical metadata of a work</skos:example>
+        <skos:example xml:lang="en">Descriptive metadata of a collection such as collection location, collection size, collection creator, collection creation time </skos:example>
+        <skos:example xml:lang="en">Descriptive metadata for the digital representation of a collection, such as metadata management details, name of hosting institution, publication date
+            etc.</skos:example>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;PreservationDescription">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Technische Metadaten und Angaben zu Nutzungsrechten zu den Klassen RepoCollection und RepoObject in Form von URIs. Verpflichtend sind die Angabe einer persistenten
-            Referenz mittels der Klasse dha:Identifier und Angaben zu Nutzungsrechten mittels dha:hasLicence</rdfs:comment>
+            Referenz mittels der Klasse dha:Identifier und Angaben zu Nutzungsrechten mittels dha:hasLicence.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Technical metadata and usage rights information for the classes RepoCollection and RepoObject in the form of URIs. It is mandatory to provide a persistent reference using the class dha:Identifier and information on usage rights using dha:hasLicence.</rdfs:comment>
         <skos:example>
             <![CDATA[
             <dha:PreservationDescription>
@@ -397,19 +418,24 @@
     <owl:Class rdf:about="&dha;AnnotationDescription">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Wrapper für Instanzen der Klasse dha:AnnotationProperty.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wrapper for instances of the class dha:AnnotationProperty.</rdfs:comment>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;AnnotationProperty">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
         <rdfs:comment xml:lang="de">Für die Resource Discovery wichtige beschreibende Daten aus den Inhalten von Objekten mittels der Subklassen dha:NamedEntity, dha:Concept und
             dha:Timespan.</rdfs:comment>
-        <skos:example>Im Text eines Werkes genannte Personen, Ortangaben, Werke, Artefakte ua.</skos:example>
-        <skos:example>Klassifizierung eines Bildinhaltes auf Basis von IconClass</skos:example>
+        <skos:example xml:lang="de">Im Text eines Werkes genannte Personen, Ortangaben, Werke, Artefakte ua.</skos:example>
+        <skos:example xml:lang="de">Klassifizierung eines Bildinhaltes auf Basis von IconClass</skos:example>
+        <rdfs:comment xml:lang="en">Important descriptive data for resource discovery coming from the contents of objects using the subclasses dha:NamedEntity, dha:Concept and dha:Timespan.</rdfs:comment>
+        <skos:example xml:lang="en">People, locations, works, artifacts etc. named in the text of a work</skos:example>
+        <skos:example xml:lang="en">Classification of image content based on IconClass</skos:example>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;NamedEntity">
         <rdfs:subClassOf rdf:resource="&dha;AnnotationProperty"/>
         <rdfs:comment xml:lang="de">Wrapper für Instanzen der dha:AnnotationProperty-Subklassen: dha:Person, dha:Place, dha:Work, dha:Organization, dha:Artefact.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wrapper for instances of the dha:AnnotationProperty subclasses: dha:Person, dha:Place, dha:Work, dha:Organization, dha:Artefact.</rdfs:comment>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;Person">
@@ -521,14 +547,17 @@
     
     <owl:Class rdf:about="&dha;DisseminationDescription">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
-        <rdfs:comment>Wrapper für Instanzen der Klasse dha:DisseminationService. </rdfs:comment>
+        <rdfs:comment xml:lang="de">Wrapper für Instanzen der Klasse dha:DisseminationService.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Wrapper for instances of the class dha:DisseminationService.</rdfs:comment>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;DisseminationService">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
-        <rdfs:comment>Formale Beschreibung von Diensten (Services), die zur Präsentation von Objektinhalten dienen. Sie erzeugen verschiedene Präsentationsformen von Instanzen der Klassen
+        <rdfs:comment xml:lang="de">Formale Beschreibung von Diensten (Services), die zur Präsentation von Objektinhalten dienen. Sie erzeugen verschiedene Präsentationsformen von Instanzen der Klassen
             dha:RepoCollection, dha:RepoObject und dha:Resource.</rdfs:comment>
-        <skos:example>Druckversion eines TEI-Dokuments im PDF-Format</skos:example>
+        <skos:example xml:lang="de">Druckversion eines TEI-Dokuments im PDF-Format</skos:example>
+        <rdfs:comment xml:lang="en">Formal description of services that are used to present object content. They create different forms of presentation of instances of the classes dha:RepoCollection, dha:RepoObject and dha:Resource.</rdfs:comment>
+        <skos:example xml:lang="en">Print version of a TEI document in PDF format</skos:example>
         <skos:example>
             <![CDATA[
             <dha:DisseminationService>
@@ -538,7 +567,8 @@
             </dha:DisseminationService>
             ]]>
         </skos:example>
-        <skos:example>Service zur Auslieferung von (einem oder mehreren) Bildern eines Objekts der Klassen dha:RepoCollection, dha:RepoObject und dha:Resource über das IIIF-Protokoll</skos:example>
+        <skos:example xml:lang="de">Service zur Auslieferung von (einem oder mehreren) Bildern eines Objekts der Klassen dha:RepoCollection, dha:RepoObject und dha:Resource über das IIIF-Protokoll</skos:example>
+        <skos:example xml:lang="en">Service for delivering (one or more) images of an object of the classes dha:RepoCollection, dha:RepoObject and dha:Resource via the IIIF protocol</skos:example>
         <skos:example>
             <![CDATA[
             <dha:DisseminationService>
@@ -551,18 +581,26 @@
     
     <owl:Class rdf:about="&dha;Resource">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
-        <rdfs:comment>Kleinste kohärente über einen URL referenzierbare Einheit einer Instanz der Klasse dha:RepoObject in einem vertrauenswürdigen Repositorium, technisch repräsentiert durch eine Bytesequenz.           </rdfs:comment>
-        <skos:example>Bytesequenz eines Bildes</skos:example>
-        <skos:example>URL, die auf die Bytesequenz eines Bildes in einem externen vertrauenswürdigen Repositorium verweist</skos:example>
-        <skos:example>URL, die auf die Bytesequenz eines Bildes in einer anderen Instanz der Klasse dha:RepoObject im selben Repositorium verweist</skos:example>
+        <rdfs:comment xml:lang="de">Kleinste kohärente über einen URL referenzierbare Einheit einer Instanz der Klasse dha:RepoObject in einem vertrauenswürdigen Repositorium, technisch repräsentiert durch eine Bytesequenz.</rdfs:comment>
+        <skos:example xml:lang="de">Bytesequenz eines Bildes</skos:example>
+        <skos:example xml:lang="de">URL, die auf die Bytesequenz eines Bildes in einem externen vertrauenswürdigen Repositorium verweist</skos:example>
+        <skos:example xml:lang="de">URL, die auf die Bytesequenz eines Bildes in einer anderen Instanz der Klasse dha:RepoObject im selben Repositorium verweist</skos:example>
+        <rdfs:comment xml:lang="en">The smallest coherent unit of an instance of the class dha:RepoObject in a trusted repository that can be referenced via a URL, technically represented by a byte sequence.</rdfs:comment>
+        <skos:example xml:lang="en">Byte sequence of an image</skos:example>
+        <skos:example xml:lang="en">URL that refers to the byte sequence of an image in an external trusted repository</skos:example>
+        <skos:example xml:lang="de">URL that refers to the byte sequence of an image in another instance of the class dha:RepoObject in the same repository</skos:example>
     </owl:Class>
     
     <owl:Class rdf:about="&dha;Identifier">
         <!-- rdfs:subClassOf rdf:resource="&dha;Class"/ -->
-        <rdfs:comment>Eine URI, die eine Entität eindeutig, persistent und optional maschinenlesbar referenziert. </rdfs:comment>
-        <skos:example>URL einer Instanz der Klasse dha:RepoCollection oder dha:RepoObject</skos:example>
-        <skos:example>GND-Identifikator für eine Person, die in einem Text erwähnt wird</skos:example>
-        <skos:example>URL eines Konzepts aus einer Taxonomie, einem kontrollierten Vokabular oder einer Ontologie</skos:example>
+        <rdfs:comment xml:lang="de">Eine URI, die eine Entität eindeutig, persistent und optional maschinenlesbar referenziert. </rdfs:comment>
+        <skos:example xml:lang="de">URL einer Instanz der Klasse dha:RepoCollection oder dha:RepoObject</skos:example>
+        <skos:example xml:lang="de">GND-Identifikator für eine Person, die in einem Text erwähnt wird</skos:example>
+        <skos:example xml:lang="de">URL eines Konzepts aus einer Taxonomie, einem kontrollierten Vokabular oder einer Ontologie</skos:example>
+        <rdfs:comment xml:lang="en">A URI that references an entity uniquely, persistently and optionally machine-readable.</rdfs:comment>
+        <skos:example xml:lang="en">URL of an instance of the class dha:RepoCollection or dha:RepoObject</skos:example>
+        <skos:example xml:lang="en">GND identifier for a person mentioned in a text</skos:example>
+        <skos:example xml:lang="en">URL of a concept from a taxonomy, a controlled vocabulary or an ontology</skos:example>
         <skos:example>
             <![CDATA[
             <dha:Identifier>
